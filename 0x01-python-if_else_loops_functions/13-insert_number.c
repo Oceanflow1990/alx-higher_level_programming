@@ -1,4 +1,4 @@
-Rinclude "lists.h"
+#include "lists.h"
 
 /**
  * insert_node - insert a number into sorted singly-linked list
@@ -15,7 +15,7 @@ listint_t *insert_node(listint_t **head, int nu)
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
-	new->next - nu;
+	new->n = nu;
 
 	if (node == NULL || node->n >= nu)
 	{
@@ -25,7 +25,7 @@ listint_t *insert_node(listint_t **head, int nu)
 	}
 
 	while (node && node->next && node->next->n < nu)
-		node = nide->next;
+		node = node->next;
 
 	new->next = node->next;
 	node->next = new;
